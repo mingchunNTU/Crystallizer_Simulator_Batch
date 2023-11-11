@@ -1,0 +1,14 @@
+crystal property,,,
+density,shape_factor,,
+g/L,-,,
+2110,1,,
+,,,
+crystallization kinetic,,,
+kb,b,kg,g
+1/(um3*min),-,um/min,-
+2.78E-05,1.78,6967,1.32
+,,,
+solubility,,,
+A,B,C,
+-,1/C,1/C2,
+128.6,5.88,0.1721,

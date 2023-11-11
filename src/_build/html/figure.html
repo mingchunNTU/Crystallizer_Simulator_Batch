@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>figure.py module &mdash; Batch_Crystallizer_Simulator 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="utility.py module" href="utility.html" />
+    <link rel="prev" title="data.py module" href="data.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Batch_Crystallizer_Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#important-script">Important Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#file-structure-of-the-example-kno3">File Structure of the example/KNO3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#simulation-of-crystallization">Simulation of Crystallization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Module%20Dictionary.html">Module Dictionary</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data.html">data.py module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">figure.py module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#figure.plot_validation"><code class="docutils literal notranslate"><span class="pre">plot_validation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#figure.plot_variable"><code class="docutils literal notranslate"><span class="pre">plot_variable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#figure.plot_variable_legend"><code class="docutils literal notranslate"><span class="pre">plot_variable_legend()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#figure.plot_variable_time"><code class="docutils literal notranslate"><span class="pre">plot_variable_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#figure.plot_variable_time_legend"><code class="docutils literal notranslate"><span class="pre">plot_variable_time_legend()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#figure.twin_plot"><code class="docutils literal notranslate"><span class="pre">twin_plot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html">utility.py module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html">crystal.py module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Batch_Crystallizer_Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Module%20Dictionary.html">Module Dictionary</a></li>
+      <li class="breadcrumb-item active">figure.py module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/figure.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-figure">
+<span id="figure-py-module"></span><h1>figure.py module<a class="headerlink" href="#module-figure" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="figure.plot_validation">
+<span class="sig-prename descclassname"><span class="pre">figure.</span></span><span class="sig-name descname"><span class="pre">plot_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_validation" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the model validation graph and set the format automatically</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>list</em>) – data for x-axis, usually it’s experimental result</p></li>
+<li><p><strong>y</strong> (<em>list</em>) – data for y-axis, usually it’s simulation result</p></li>
+<li><p><strong>data_range</strong> (<em>list</em>) – the range for x and y axis</p></li>
+<li><p><strong>xlabel</strong> (<em>string</em>) – x label of the plot</p></li>
+<li><p><strong>ylabel</strong> (<em>string</em>) – y label of the plot</p></li>
+<li><p><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="figure.plot_variable">
+<span class="sig-prename descclassname"><span class="pre">figure.</span></span><span class="sig-name descname"><span class="pre">plot_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_variable" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the x-y figure and set the format automatically</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>list</em>) – data for x-axis</p></li>
+<li><p><strong>y</strong> (<em>list</em>) – data for y-axis</p></li>
+<li><p><strong>xlabel</strong> (<em>string</em>) – x label of the plot</p></li>
+<li><p><strong>ylabel</strong> (<em>string</em>) – y label of the plot</p></li>
+<li><p><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</p></li>
+<li><p><strong>xlim</strong> (<em>list</em>) – range for x-axis. If xlim=[0,0], the default range is used</p></li>
+<li><p><strong>ylim</strong> (<em>list</em>) – range for y-axis. If ylim=[0,0], the default range is used</p></li>
+<li><p><strong>form</strong> (<em>char</em>) – dot form</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="figure.plot_variable_legend">
+<span class="sig-prename descclassname"><span class="pre">figure.</span></span><span class="sig-name descname"><span class="pre">plot_variable_legend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_variable_legend" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the x-y plot with multiple legend and set the format automatically</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>list</em>) – data for x-axis</p></li>
+<li><p><strong>y</strong> (<em>list</em>) – data for y-axis</p></li>
+<li><p><strong>legend</strong> (<em>list</em>) – legends for each line</p></li>
+<li><p><strong>xlabel</strong> (<em>string</em>) – x label of the plot</p></li>
+<li><p><strong>ylabel</strong> (<em>string</em>) – y label of the plot</p></li>
+<li><p><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</p></li>
+<li><p><strong>xlim</strong> (<em>list</em>) – range for x-axis. If xlim=[0,0], the default range is used</p></li>
+<li><p><strong>ylim</strong> (<em>list</em>) – range for y-axis. If ylim=[0,0], the default range is used</p></li>
+<li><p><strong>form</strong> (<em>char</em>) – dot form</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="figure.plot_variable_time">
+<span class="sig-prename descclassname"><span class="pre">figure.</span></span><span class="sig-name descname"><span class="pre">plot_variable_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_variable_time" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the x-t figure and set the format automatically</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variable_time</strong> (<a class="reference internal" href="data.html#data.variable_time" title="data.variable_time"><em>variable_time</em></a>) – the time-dependent variable to be plotted</p></li>
+<li><p><strong>ylabel</strong> (<em>string</em>) – y label of the plot</p></li>
+<li><p><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</p></li>
+<li><p><strong>ylim</strong> (<em>list</em>) – range for y-axis. If ylim=[0,0], the default range is used</p></li>
+<li><p><strong>form</strong> (<em>char</em>) – dot form</p></li>
+<li><p><strong>interval</strong> (<em>float</em>) – the time step of the variable_time (in unit of hour)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="figure.plot_variable_time_legend">
+<span class="sig-prename descclassname"><span class="pre">figure.</span></span><span class="sig-name descname"><span class="pre">plot_variable_time_legend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_time_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_variable_time_legend" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the x-t figure with multiple legends and set the format automatically</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variable_time</strong> (<em>list</em>) – the list of the time-dependent variables to be plotted</p></li>
+<li><p><strong>legend</strong> (<em>list</em>) – legend for each lines</p></li>
+<li><p><strong>ylabel</strong> (<em>string</em>) – y label of the plot</p></li>
+<li><p><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</p></li>
+<li><p><strong>ylim</strong> (<em>list</em>) – range for y-axis. If ylim=[0,0], the default range is used</p></li>
+<li><p><strong>form</strong> (<em>char</em>) – dot form</p></li>
+<li><p><strong>interval</strong> (<em>float</em>) – the time step of the variable_time (in unit of hour)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="figure.twin_plot">
+<span class="sig-prename descclassname"><span class="pre">figure.</span></span><span class="sig-name descname"><span class="pre">twin_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_time1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_time2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#figure.twin_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Plot two time-dependent variables on different y-axis scale and set the format automatically</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variable_time1</strong> (<a class="reference internal" href="data.html#data.variable_time" title="data.variable_time"><em>variable_time</em></a>) – first time-dependent variable</p></li>
+<li><p><strong>variable_time2</strong> (<a class="reference internal" href="data.html#data.variable_time" title="data.variable_time"><em>variable_time</em></a>) – second time-dependent variable</p></li>
+<li><p><strong>ylim1</strong> (<em>list</em>) – the range of y-axis limit for the first time-dependent variable</p></li>
+<li><p><strong>ylim2</strong> (<em>list</em>) – the range of y-axis limit for the second time-dependent variable</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="data.html" class="btn btn-neutral float-left" title="data.py module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="utility.html" class="btn btn-neutral float-right" title="utility.py module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ming-Chun Fang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

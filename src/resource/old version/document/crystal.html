@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>crystal.py module &mdash; Crystallization_Simulator  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="utility.py module" href="utility.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Crystallization_Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Welcome to Crystallization_Simulator’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Module Dictionary.html">Module Dictionary</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data.html">data.py module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="figure.html">figure.py module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html">utility.py module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">crystal.py module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Crystallization_Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="Module Dictionary.html">Module Dictionary</a></li>
+      <li class="breadcrumb-item active">crystal.py module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/crystal.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-crystal">
+<span id="crystal-py-module"></span><h1>crystal.py module<a class="headerlink" href="#module-crystal" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="crystal.crystal">
+<em class="property">class </em><code class="descclassname">crystal.</code><code class="descname">crystal</code><a class="headerlink" href="#crystal.crystal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Module used for crystallization simulation</p>
+<dl class="method">
+<dt id="crystal.crystal.get_CSD">
+<code class="descname">get_CSD</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#crystal.crystal.get_CSD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the size and density function of the final crystal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">size (variable) and density function (variable)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="data.html#data.variable" title="data.variable">variable</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="crystal.crystal.get_trajectory">
+<code class="descname">get_trajectory</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#crystal.crystal.get_trajectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the desired trajectory</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em>) – desired trajectory name (T,S,G,B,tau,C,u0s~u4s,u0n~u4n)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">time (variable) and trajectory (variable)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="data.html#data.variable" title="data.variable">variable</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="crystal.crystal.initialize">
+<code class="descname">initialize</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#crystal.crystal.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read in the physical property of the crystal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – physical property file name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="crystal.crystal.moment_equation">
+<code class="descname">moment_equation</code><span class="sig-paren">(</span><em>y</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#crystal.crystal.moment_equation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define the moment equation to be solved. y[0]~y[4]: seed moment (order=index). y[5]~y[9]: nucleate moment (order=index-5). y[10]: concentration</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y</strong> (<em>list</em>) – moment</li>
+<li><strong>t</strong> (<em>float</em>) – time</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dy/dt</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="crystal.crystal.set_seed">
+<code class="descname">set_seed</code><span class="sig-paren">(</span><em>size</em>, <em>density_function</em><span class="sig-paren">)</span><a class="headerlink" href="#crystal.crystal.set_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the CSD of seed</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>size</strong> (<em>list</em>) – crystal size (um)</li>
+<li><strong>density_function</strong> (<em>list</em>) – density function (1/um^4)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="crystal.crystal.set_trajectory">
+<code class="descname">set_trajectory</code><span class="sig-paren">(</span><em>time</em>, <em>temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#crystal.crystal.set_trajectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the cooling trajectory</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> (<em>list</em>) – time (min)</li>
+<li><strong>temperature</strong> (<em>list</em>) – temperature (C)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="crystal.crystal.solubility">
+<code class="descname">solubility</code><span class="sig-paren">(</span><em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#crystal.crystal.solubility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the saturated concentration under specified temperature</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>T</strong> (<em>float</em>) – temperature (C)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">saturated concentration (g/L)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="crystal.crystal.solve">
+<code class="descname">solve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#crystal.crystal.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve the moment equation, get various trajectory and final CSD of the crystallizer</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="utility.html" class="btn btn-neutral float-left" title="utility.py module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ming-Chun Fang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

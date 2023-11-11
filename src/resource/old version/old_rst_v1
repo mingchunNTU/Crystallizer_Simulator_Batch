@@ -1,0 +1,85 @@
+.. Crystallization_Simulator documentation master file, created by
+   sphinx-quickstart on Thu Nov 10 09:42:43 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Crystallization_Simulator's documentation!
+=====================================================
+This program simulates the crystal size distriubtion of the batch cooling crystallizer with size independent growth rate kinetic. The crystallization kinetic parameter, solubility and crystal property are stored in physical_property.csv file. The operation parameters such as seed condition and cooling trajectory are stored in operation.csv file. It's needed to install scipy package to execute the program.
+
+To install the program, add the following lines to ~/.bashrc file and source ~/.bashrc again.
+
+.. code-block:: console
+
+	source $HOME/Crystallization_Simulator/src/etc/bashrc
+	
+To execute the program
+
+.. code-block:: console
+
+	crystallization_simulator --keyword arg
+
+keyword
+
+* get_CSD: plot and save the final CSD of the crystal
+* get_trajectory: plot and save the desired trajectory of the system
+
+arg for get_CSD
+
+* mesh_size: mesh size of size distribution (um)
+* CSD_type: number or volume
+
+arg for get_trajectory
+
+* trajectory_type: the type of trajectory of interest
+
+  * T: temperature
+  * S: supersaturation 
+  * G: growth rate
+  * B: nucleation rate
+  * tau: transform time
+  * C: concentration
+  * u0s ~ u4s: seeded moment
+  * u0n ~ u4n: nucleation moment
+
+The form of solubility in crystallization_simulator is shown as
+
+.. math::
+
+	Csat=A+B*T+C*T^2 
+
+T is in unit of :math:`^oC` and Csat is in unit of g solute/L solvent
+
+The unit of solubility, seed loading and crystal density should be the same because of the mass balance equation. The time and length unit of kg and kb should be consistent because of moment equation. The birth rate used in the simulation is normallized by the solvent volume. Thus, the third moment is dimensionless. 
+
+The seed CSD is assumed to be parabolic form.
+
+.. math:: 
+
+	f(r)=A*r_0(1+w)(1-w)
+
+for :math:`r_0(1+w)>r>r_0(1-w)`
+
+The temperature trajectory is defined in a polynomial form.
+
+.. math::
+
+	T(t)=T_i-(T_i-T_e)*(\frac{t}{batch time})^j
+
+T is temperature. Ti is initial temperature. Te is end temperature. t is time. j is the order of the trajectory 
+
+.. toctree::
+   data
+   figure
+   utility
+   crystal
+   
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

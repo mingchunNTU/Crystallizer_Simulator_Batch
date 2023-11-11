@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; Crystallization_Simulator  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module Dictionary" href="Module Dictionary.html" />
+    <link rel="prev" title="Welcome to Crystallization_Simulator’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Crystallization_Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#program-command">Program Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#file-structure">File Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#simulation-of-crystallization">Simulation of Crystallization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module Dictionary.html">Module Dictionary</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Crystallization_Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/manual.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>It’s suggested to install the program on a computer with Ubuntu 20.04.6 or newer version. The program is written in Python. Please make sure that you install Python 3 including <strong>numpy,matplotlib,scipy,csv,copy,datetime and os package</strong> on your computer.</p>
+<p>To install the program, please install git and clone the source code of the project</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ~</span>
+<span class="go">sudo apt-get install git</span>
+<span class="go">git clone https://github.com/mingchunNTU/Crystallization_Simulator.git</span>
+</pre></div>
+</div>
+<p>Add the following line to your ~/.bashrc file and update ~/.bashrc setting by typing <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.bashrc</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $HOME/Crystallization_Simulator/src/etc/bashrc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="program-command">
+<h1>Program Command<a class="headerlink" href="#program-command" title="Permalink to this headline">¶</a></h1>
+<p>The program provides two commands to simulate the crystallizer.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> execute the simulation, and output the trajectory and product CSD
+<span class="go">crystallization_simulator --run</span>
+
+<span class="gp">#</span> plot the crystal size distribution of the final product
+<span class="go">crystallization_simulator --plot_CSD type</span>
+
+<span class="gp">#</span> plot the trajectory during crystallization
+<span class="go">crystallization_simulator --plot_trajectory type</span>
+</pre></div>
+</div>
+<p>Please substitute the parameters such as <em>type</em> with a string with physical meaning <strong>instead of putting the string on the command line directly</strong>, or an error message may occur.</p>
+<p>The <em>type</em> parameters for <code class="code docutils literal notranslate"><span class="pre">--plot_CSD</span></code> command.</p>
+<ul class="simple">
+<li>number: export the crystal size distribution based on number fraction</li>
+<li>volume: export the crystal size distribution based on volume fraction</li>
+</ul>
+<p>The <em>type</em> parameters for <code class="code docutils literal notranslate"><span class="pre">--plot_trajectory</span></code> command.</p>
+<ul class="simple">
+<li>T: temperature</li>
+<li>S: supersaturation</li>
+<li>G: growth rate</li>
+<li>B: nucleation rate</li>
+<li>tau: transform time</li>
+<li>C: concentration</li>
+<li>u0s ~ u4s: seeded moment</li>
+<li>u0n ~ u4n: nucleation moment</li>
+</ul>
+</div>
+<div class="section" id="file-structure">
+<h1>File Structure<a class="headerlink" href="#file-structure" title="Permalink to this headline">¶</a></h1>
+<p>Please use the files in examples/KNO3 as examples when you build your own case. The kinetic parameters used are from the work of Chung et al. (1). The description of the files are shown below. To execute the program, please enter <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">./Allrun.sh</span></code></p>
+<ul>
+<li><p class="first">Allrun.sh: Execution script of the example</p>
+</li>
+<li><p class="first">crystallizer_setting: the parameters used for crystallizer simulation</p>
+<blockquote>
+<div><ul class="simple">
+<li>operating_condition.csv: the operating condition of the crystallizer</li>
+<li>physical_property.csv: the crystal property and nucleation kinetic parameters</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Result: the simulation result</p>
+<blockquote>
+<div><ul class="simple">
+<li>CSD.csv: the simulated crystal size distriubtion</li>
+<li>trajectory.csv: the trajectory during crystallization</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Ref: (1) Chung, S. H.; Ma, D. L.; Braatz, R. D. Optimal Seeding in Batch Crystallization. The Canadian journal of chemical engineering 1999, 77 (3), 590–596.</p>
+</div>
+<div class="section" id="simulation-of-crystallization">
+<h1>Simulation of Crystallization<a class="headerlink" href="#simulation-of-crystallization" title="Permalink to this headline">¶</a></h1>
+<p>Please edit the operating_condition.csv and physical_property.csv according to the system you studied. The crystallization kinetic parameter, solubility and crystal property are stored in physical_property.csv file. The operation parameters such as seed condition and cooling trajectory are stored in operation.csv file.</p>
+<p>The form of solubility in crystallization_simulator is shown as</p>
+<div class="math notranslate nohighlight">
+\[Csat=A+B*T+C*T^2\]</div>
+<p>T is in unit of <span class="math notranslate nohighlight">\(^oC\)</span> and Csat is in unit of g solute/L solvent</p>
+<p>The unit of solubility, seed loading and crystal density should be the same because of the mass balance equation. The time and length unit of kg and kb should be consistent because of moment equation. The birth rate used in the simulation is normallized by the solvent volume. Thus, the third moment is dimensionless.</p>
+<p>The seed CSD is assumed to be parabolic form.</p>
+<div class="math notranslate nohighlight">
+\[f(r)=A*r_0(1+w)(1-w)\]</div>
+<p>for <span class="math notranslate nohighlight">\(r_0(1+w)&gt;r&gt;r_0(1-w)\)</span></p>
+<p>The temperature trajectory is defined in a polynomial form.</p>
+<div class="math notranslate nohighlight">
+\[T(t)=T_i-(T_i-T_e)*(\frac{t}{batch time})^j\]</div>
+<p>T is temperature. Ti is initial temperature. Te is end temperature. t is time. j is the order of the trajectory</p>
+<p>After specifying all the parameters, please edit Allrun.sh according to your need, and enter <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">./Allrun.sh</span></code> to execute the program.</p>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Crystallization_Simulator’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Module Dictionary.html" class="btn btn-neutral float-right" title="Module Dictionary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ming-Chun Fang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

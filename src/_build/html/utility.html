@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>utility.py module &mdash; Batch_Crystallizer_Simulator 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="crystal.py module" href="crystal.html" />
+    <link rel="prev" title="figure.py module" href="figure.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Batch_Crystallizer_Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#important-script">Important Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#file-structure-of-the-example-kno3">File Structure of the example/KNO3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#simulation-of-crystallization">Simulation of Crystallization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Module%20Dictionary.html">Module Dictionary</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data.html">data.py module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="figure.html">figure.py module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">utility.py module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#utility.CSD_normalization"><code class="docutils literal notranslate"><span class="pre">CSD_normalization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utility.DF_to_NF"><code class="docutils literal notranslate"><span class="pre">DF_to_NF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utility.NF_to_VF"><code class="docutils literal notranslate"><span class="pre">NF_to_VF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utility.VF_to_NF"><code class="docutils literal notranslate"><span class="pre">VF_to_NF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utility.auto_plot"><code class="docutils literal notranslate"><span class="pre">auto_plot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utility.generate_seed_parabolic"><code class="docutils literal notranslate"><span class="pre">generate_seed_parabolic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utility.generate_temperature_trajectory"><code class="docutils literal notranslate"><span class="pre">generate_temperature_trajectory()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utility.list_operation"><code class="docutils literal notranslate"><span class="pre">list_operation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utility.moment_calculation"><code class="docutils literal notranslate"><span class="pre">moment_calculation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utility.transform"><code class="docutils literal notranslate"><span class="pre">transform()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html">crystal.py module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Batch_Crystallizer_Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Module%20Dictionary.html">Module Dictionary</a></li>
+      <li class="breadcrumb-item active">utility.py module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/utility.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-utility">
+<span id="utility-py-module"></span><h1>utility.py module<a class="headerlink" href="#module-utility" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.CSD_normalization">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">CSD_normalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid_loading</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape_factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crude_density_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.CSD_normalization" title="Permalink to this definition"></a></dt>
+<dd><p>Convert the crude CSD to a CSD that fits the specified solid loading</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solid_loading</strong> (<em>float</em>) – solid loading of the crystal (g/L)</p></li>
+<li><p><strong>crystal_density</strong> (<em>float</em>) – crystal density (g/L)</p></li>
+<li><p><strong>shape_factor</strong> (<em>float</em>) – shape factor (-)</p></li>
+<li><p><strong>size</strong> (<em>list</em>) – crystal size (um)</p></li>
+<li><p><strong>crude_density_function</strong> (<em>list</em>) – crude density function (-)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>return the size (list) and density function (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.DF_to_NF">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">DF_to_NF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.DF_to_NF" title="Permalink to this definition"></a></dt>
+<dd><p>Transform the number density function to number fraction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – size</p></li>
+<li><p><strong>density_function</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – number density function</p></li>
+<li><p><strong>mesh_size</strong> (<em>float</em>) – mesh size of the size distribution (um)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>size and number fraction</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="data.html#data.variable" title="data.variable">variable</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.NF_to_VF">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">NF_to_VF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_fraction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.NF_to_VF" title="Permalink to this definition"></a></dt>
+<dd><p>Transform the number fraction to volume fraction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – size</p></li>
+<li><p><strong>number_fraction</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – number fraction</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>size and volume fraction</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="data.html#data.variable" title="data.variable">variable</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.VF_to_NF">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">VF_to_NF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_fraction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.VF_to_NF" title="Permalink to this definition"></a></dt>
+<dd><p>Transform the number fraction to volume fraction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – size</p></li>
+<li><p><strong>volume_fraction</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – volume fraction</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>size and number fraction</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="data.html#data.variable" title="data.variable">variable</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.auto_plot">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">auto_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.auto_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the variables and generate xlabel and ylabel automatically</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variable_x</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – data for x-axis</p></li>
+<li><p><strong>variable_y</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – data for y-axis</p></li>
+<li><p><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</p></li>
+<li><p><strong>xlim</strong> (<em>list</em>) – range for x-axis. If xlim=[0,0], the default range is used</p></li>
+<li><p><strong>ylim</strong> (<em>list</em>) – range for y-axis. If ylim=[0,0], the default range is used</p></li>
+<li><p><strong>form</strong> (<em>char</em>) – dot form</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.generate_seed_parabolic">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">generate_seed_parabolic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_loading</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape_factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.generate_seed_parabolic" title="Permalink to this definition"></a></dt>
+<dd><p>Generate the seed CSD (size and density function) through seed usage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_loading</strong> (<em>float</em>) – seed loading (g/L)</p></li>
+<li><p><strong>crystal_density</strong> (<em>float</em>) – crystal density (g/L)</p></li>
+<li><p><strong>shape_factor</strong> (<em>float</em>) – shape factor (-)</p></li>
+<li><p><strong>mesh_size</strong> (<em>float</em>) – mesh size (um)</p></li>
+<li><p><strong>r0</strong> (<em>float</em>) – seed mean size (um)</p></li>
+<li><p><strong>w</strong> (<em>float</em>) – seed CSD width (-)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>size and density function</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.generate_temperature_trajectory">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">generate_temperature_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.generate_temperature_trajectory" title="Permalink to this definition"></a></dt>
+<dd><p>Generate the temperature trajectory with specified order</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch_time</strong> (<em>float</em>) – batch time (min)</p></li>
+<li><p><strong>time_step</strong> (<em>float</em>) – time step (min)</p></li>
+<li><p><strong>initial_T</strong> (<em>float</em>) – initial temperature (C)</p></li>
+<li><p><strong>end_T</strong> (<em>float</em>) – end temperature (C</p></li>
+<li><p><strong>order</strong> (<em>float</em>) – order of cooling trajectory (-)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>time and temperature</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.list_operation">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">list_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.list_operation" title="Permalink to this definition"></a></dt>
+<dd><p>Shift or Scale the CSD by a specified value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_list</strong> (<em>list</em>) – input list</p></li>
+<li><p><strong>operation</strong> (<em>char</em>) – <ul>
+<li><p>for shift, * for scale</p></li>
+</ul>
+</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – shift or scale constant</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>processed list</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.moment_calculation">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">moment_calculation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.moment_calculation" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the desired order moment of the specified CSD</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>list</em>) – crystal size (um)</p></li>
+<li><p><strong>density_function</strong> (<em>list</em>) – density function (1/um^4)</p></li>
+<li><p><strong>order</strong> (<em>float</em>) – moment order</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>moment</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.transform">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_coordinate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.transform" title="Permalink to this definition"></a></dt>
+<dd><p>Transform the discretized PDF to continuous PDF, which makes it easier to integrate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_list</strong> (<em>list</em>) – crystal size (um)</p></li>
+<li><p><strong>y_list</strong> (<em>list</em>) – density function (1/um^4)</p></li>
+<li><p><strong>x_coordinate</strong> (<em>float</em>) – x coordinate (um)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>y coordinate (1/um^4)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="figure.html" class="btn btn-neutral float-left" title="figure.py module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="crystal.html" class="btn btn-neutral float-right" title="crystal.py module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ming-Chun Fang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

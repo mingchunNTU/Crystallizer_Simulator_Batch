@@ -1,0 +1,118 @@
+
+Installation
+=====================================================
+It's suggested to install the program on a computer with Ubuntu 20.04.6 or newer version. The program is written in Python. Please make sure that you install Python 3 including **numpy,matplotlib,scipy,csv,copy,datetime and os package** on your computer.
+
+To install the program, please install git and clone the source code of the project
+
+.. code-block:: console
+
+	cd ~
+	sudo apt-get install git
+	git clone https://github.com/mingchunNTU/Crystallization_Simulator.git
+	
+Add the following line to your ~/.bashrc file and update ~/.bashrc setting by typing :code:`source ~/.bashrc`.
+
+.. code-block:: console
+
+	source $HOME/Crystallization_Simulator/src/etc/bashrc
+
+Program Command
+====================================================
+The program provides two commands to simulate the crystallizer. 
+
+.. code-block:: console
+
+	# execute the simulation, and output the trajectory and product CSD
+	crystallization_simulator --run
+
+	# plot the crystal size distribution of the final product
+	crystallization_simulator --plot_CSD type
+	
+	# plot the trajectory during crystallization
+	crystallization_simulator --plot_trajectory type
+
+Please substitute the parameters such as *type* with a string with physical meaning **instead of putting the string on the command line directly**, or an error message may occur.
+
+The *type* parameters for :code:`--plot_CSD` command.
+
+* number: export the crystal size distribution based on number fraction 
+* volume: export the crystal size distribution based on volume fraction
+
+The *type* parameters for :code:`--plot_trajectory` command.
+
+* T: temperature
+* S: supersaturation 
+* G: growth rate
+* B: nucleation rate
+* tau: transform time
+* C: concentration
+* u0s ~ u4s: seeded moment
+* u0n ~ u4n: nucleation moment
+	
+
+File Structure
+====================================================
+Please use the files in examples/KNO3 as examples when you build your own case. The kinetic parameters used are from the work of Chung et al. (1). The description of the files are shown below. To execute the program, please enter :code:`source ./Allrun.sh`
+
+* Allrun.sh: Execution script of the example
+* crystallizer_setting: the parameters used for crystallizer simulation
+
+	* operating_condition.csv: the operating condition of the crystallizer
+	* physical_property.csv: the crystal property and nucleation kinetic parameters
+	
+* Result: the simulation result
+	
+	* CSD.csv: the simulated crystal size distriubtion
+	* trajectory.csv: the trajectory during crystallization
+
+
+Ref: (1) Chung, S. H.; Ma, D. L.; Braatz, R. D. Optimal Seeding in Batch Crystallization. The Canadian journal of chemical engineering 1999, 77 (3), 590–596.
+
+Simulation of Crystallization
+====================================================
+Please edit the operating_condition.csv and physical_property.csv according to the system you studied. The crystallization kinetic parameter, solubility and crystal property are stored in physical_property.csv file. The operation parameters such as seed condition and cooling trajectory are stored in operation.csv file.
+
+The form of solubility in crystallization_simulator is shown as
+
+.. math::
+
+	Csat=A+B*T+C*T^2 
+
+T is in unit of :math:`^oC` and Csat is in unit of g solute/L solvent
+
+The unit of solubility, seed loading and crystal density should be the same because of the mass balance equation. The time and length unit of kg and kb should be consistent because of moment equation. The birth rate used in the simulation is normallized by the solvent volume. Thus, the third moment is dimensionless. 
+
+The seed CSD is assumed to be parabolic form.
+
+.. math:: 
+
+	f(r)=A*r_0(1+w)(1-w)
+
+for :math:`r_0(1+w)>r>r_0(1-w)`
+
+The temperature trajectory is defined in a polynomial form.
+
+.. math::
+
+	T(t)=T_i-(T_i-T_e)*(\frac{t}{batch time})^j
+	
+T is temperature. Ti is initial temperature. Te is end temperature. t is time. j is the order of the trajectory 
+
+After specifying all the parameters, please edit Allrun.sh according to your need, and enter :code:`source ./Allrun.sh` to execute the program.
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+
+
+
+
+ 
+
+

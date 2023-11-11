@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>figure.py module &mdash; Crystallization_Simulator  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="utility.py module" href="utility.html" />
+    <link rel="prev" title="data.py module" href="data.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Crystallization_Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Welcome to Crystallization_Simulator’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Module Dictionary.html">Module Dictionary</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data.html">data.py module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">figure.py module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html">utility.py module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html">crystal.py module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Crystallization_Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="Module Dictionary.html">Module Dictionary</a></li>
+      <li class="breadcrumb-item active">figure.py module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/figure.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-figure">
+<span id="figure-py-module"></span><h1>figure.py module<a class="headerlink" href="#module-figure" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="figure.plot_validation">
+<code class="descclassname">figure.</code><code class="descname">plot_validation</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>data_range</em>, <em>xlabel</em>, <em>ylabel</em>, <em>title</em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_validation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the model validation graph and set the format automatically</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>list</em>) – data for x-axis, usually it’s experimental result</li>
+<li><strong>y</strong> (<em>list</em>) – data for y-axis, usually it’s simulation result</li>
+<li><strong>data_range</strong> (<em>list</em>) – the range for x and y axis</li>
+<li><strong>xlabel</strong> (<em>string</em>) – x label of the plot</li>
+<li><strong>ylabel</strong> (<em>string</em>) – y label of the plot</li>
+<li><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="figure.plot_variable">
+<code class="descclassname">figure.</code><code class="descname">plot_variable</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>xlabel</em>, <em>ylabel</em>, <em>title</em>, <em>xlim</em>, <em>ylim</em>, <em>form</em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the x-y figure and set the format automatically</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>list</em>) – data for x-axis</li>
+<li><strong>y</strong> (<em>list</em>) – data for y-axis</li>
+<li><strong>xlabel</strong> (<em>string</em>) – x label of the plot</li>
+<li><strong>ylabel</strong> (<em>string</em>) – y label of the plot</li>
+<li><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</li>
+<li><strong>xlim</strong> (<em>list</em>) – range for x-axis. If xlim=[0,0], the default range is used</li>
+<li><strong>ylim</strong> (<em>list</em>) – range for y-axis. If ylim=[0,0], the default range is used</li>
+<li><strong>form</strong> (<em>char</em>) – dot form</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="figure.plot_variable_II">
+<code class="descclassname">figure.</code><code class="descname">plot_variable_II</code><span class="sig-paren">(</span><em>variable_x</em>, <em>variable_y</em>, <em>title</em>, <em>xlim</em>, <em>ylim</em>, <em>form</em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_variable_II" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the variables and generate xlabel and ylabel automatically</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>variable_x</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – data for x-axis</li>
+<li><strong>variable_y</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – data for y-axis</li>
+<li><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</li>
+<li><strong>xlim</strong> (<em>list</em>) – range for x-axis. If xlim=[0,0], the default range is used</li>
+<li><strong>ylim</strong> (<em>list</em>) – range for y-axis. If ylim=[0,0], the default range is used</li>
+<li><strong>form</strong> (<em>char</em>) – dot form</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="figure.plot_variable_legend">
+<code class="descclassname">figure.</code><code class="descname">plot_variable_legend</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>legend</em>, <em>xlabel</em>, <em>ylabel</em>, <em>title</em>, <em>xlim</em>, <em>ylim</em>, <em>form</em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_variable_legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the x-y plot with multiple legend and set the format automatically</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>list</em>) – data for x-axis</li>
+<li><strong>y</strong> (<em>list</em>) – data for y-axis</li>
+<li><strong>legend</strong> (<em>list</em>) – legends for each line</li>
+<li><strong>xlabel</strong> (<em>string</em>) – x label of the plot</li>
+<li><strong>ylabel</strong> (<em>string</em>) – y label of the plot</li>
+<li><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</li>
+<li><strong>xlim</strong> (<em>list</em>) – range for x-axis. If xlim=[0,0], the default range is used</li>
+<li><strong>ylim</strong> (<em>list</em>) – range for y-axis. If ylim=[0,0], the default range is used</li>
+<li><strong>form</strong> (<em>char</em>) – dot form</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="figure.plot_variable_time">
+<code class="descclassname">figure.</code><code class="descname">plot_variable_time</code><span class="sig-paren">(</span><em>variable_time</em>, <em>ylabel</em>, <em>title</em>, <em>ylim</em>, <em>form</em>, <em>interval</em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_variable_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the x-t figure and set the format automatically</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>variable_time</strong> (<a class="reference internal" href="data.html#data.variable_time" title="data.variable_time"><em>variable_time</em></a>) – the time-dependent variable to be plotted</li>
+<li><strong>ylabel</strong> (<em>string</em>) – y label of the plot</li>
+<li><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</li>
+<li><strong>ylim</strong> (<em>list</em>) – range for y-axis. If ylim=[0,0], the default range is used</li>
+<li><strong>form</strong> (<em>char</em>) – dot form</li>
+<li><strong>interval</strong> (<em>float</em>) – the time step of the variable_time (in unit of hour)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="figure.plot_variable_time_legend">
+<code class="descclassname">figure.</code><code class="descname">plot_variable_time_legend</code><span class="sig-paren">(</span><em>variable_time_list</em>, <em>legend</em>, <em>ylabel</em>, <em>title</em>, <em>ylim</em>, <em>form</em>, <em>interval</em><span class="sig-paren">)</span><a class="headerlink" href="#figure.plot_variable_time_legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the x-t figure with multiple legends and set the format automatically</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>variable_time</strong> (<em>list</em>) – the list of the time-dependent variables to be plotted</li>
+<li><strong>legend</strong> (<em>list</em>) – legend for each lines</li>
+<li><strong>ylabel</strong> (<em>string</em>) – y label of the plot</li>
+<li><strong>title</strong> (<em>string</em>) – title of the plot. If title=”off”, there’s no title</li>
+<li><strong>ylim</strong> (<em>list</em>) – range for y-axis. If ylim=[0,0], the default range is used</li>
+<li><strong>form</strong> (<em>char</em>) – dot form</li>
+<li><strong>interval</strong> (<em>float</em>) – the time step of the variable_time (in unit of hour)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="figure.twin_plot">
+<code class="descclassname">figure.</code><code class="descname">twin_plot</code><span class="sig-paren">(</span><em>variable_time1</em>, <em>variable_time2</em>, <em>ylim1</em>, <em>ylim2</em><span class="sig-paren">)</span><a class="headerlink" href="#figure.twin_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot two time-dependent variables on different y-axis scale and set the format automatically</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>variable_time1</strong> (<a class="reference internal" href="data.html#data.variable_time" title="data.variable_time"><em>variable_time</em></a>) – first time-dependent variable</li>
+<li><strong>variable_time2</strong> (<a class="reference internal" href="data.html#data.variable_time" title="data.variable_time"><em>variable_time</em></a>) – second time-dependent variable</li>
+<li><strong>ylim1</strong> (<em>list</em>) – the range of y-axis limit for the first time-dependent variable</li>
+<li><strong>ylim2</strong> (<em>list</em>) – the range of y-axis limit for the second time-dependent variable</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="data.html" class="btn btn-neutral float-left" title="data.py module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="utility.html" class="btn btn-neutral float-right" title="utility.py module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ming-Chun Fang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

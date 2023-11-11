@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>utility.py module &mdash; Crystallization_Simulator  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="crystal.py module" href="crystal.html" />
+    <link rel="prev" title="figure.py module" href="figure.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Crystallization_Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Welcome to Crystallization_Simulator’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Module Dictionary.html">Module Dictionary</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data.html">data.py module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="figure.html">figure.py module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">utility.py module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html">crystal.py module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Crystallization_Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="Module Dictionary.html">Module Dictionary</a></li>
+      <li class="breadcrumb-item active">utility.py module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/utility.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-utility">
+<span id="utility-py-module"></span><h1>utility.py module<a class="headerlink" href="#module-utility" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="utility.CSD_normalization">
+<code class="descclassname">utility.</code><code class="descname">CSD_normalization</code><span class="sig-paren">(</span><em>solid_loading</em>, <em>crystal_density</em>, <em>shape_factor</em>, <em>size</em>, <em>crude_density_function</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.CSD_normalization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the crude CSD to a CSD that fits the specified solid loading</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>solid_loading</strong> (<em>float</em>) – solid loading of the crystal (g/L)</li>
+<li><strong>crystal_density</strong> (<em>float</em>) – crystal density (g/L)</li>
+<li><strong>shape_factor</strong> (<em>float</em>) – shape factor (-)</li>
+<li><strong>size</strong> (<em>list</em>) – crystal size (um)</li>
+<li><strong>crude_density_function</strong> (<em>list</em>) – crude density function (-)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">return the size (list) and density function (list)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utility.DF_to_NF">
+<code class="descclassname">utility.</code><code class="descname">DF_to_NF</code><span class="sig-paren">(</span><em>size</em>, <em>density_function</em>, <em>mesh_size</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.DF_to_NF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the number density function to number fraction</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>size</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – size</li>
+<li><strong>density_function</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – number density function</li>
+<li><strong>mesh_size</strong> (<em>float</em>) – mesh size of the size distribution (um)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">size and number fraction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="data.html#data.variable" title="data.variable">variable</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utility.NF_to_VF">
+<code class="descclassname">utility.</code><code class="descname">NF_to_VF</code><span class="sig-paren">(</span><em>size</em>, <em>number_fraction</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.NF_to_VF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the number fraction to volume fraction</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>size</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – size</li>
+<li><strong>number_fraction</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – number fraction</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">size and volume fraction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="data.html#data.variable" title="data.variable">variable</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utility.VF_to_NF">
+<code class="descclassname">utility.</code><code class="descname">VF_to_NF</code><span class="sig-paren">(</span><em>size</em>, <em>volume_fraction</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.VF_to_NF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the number fraction to volume fraction</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>size</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – size</li>
+<li><strong>volume_fraction</strong> (<a class="reference internal" href="data.html#data.variable" title="data.variable"><em>variable</em></a>) – volume fraction</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">size and number fraction</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="data.html#data.variable" title="data.variable">variable</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utility.generate_seed_parabolic">
+<code class="descclassname">utility.</code><code class="descname">generate_seed_parabolic</code><span class="sig-paren">(</span><em>seed_loading</em>, <em>crystal_density</em>, <em>shape_factor</em>, <em>mesh_size</em>, <em>r0</em>, <em>w</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.generate_seed_parabolic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the seed CSD (size and density function) through seed usage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>seed_loading</strong> (<em>float</em>) – seed loading (g/L)</li>
+<li><strong>crystal_density</strong> (<em>float</em>) – crystal density (g/L)</li>
+<li><strong>shape_factor</strong> (<em>float</em>) – shape factor (-)</li>
+<li><strong>mesh_size</strong> (<em>float</em>) – mesh size (um)</li>
+<li><strong>r0</strong> (<em>float</em>) – seed mean size (um)</li>
+<li><strong>w</strong> (<em>float</em>) – seed CSD width (-)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">size and density function</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utility.generate_temperature_trajectory">
+<code class="descclassname">utility.</code><code class="descname">generate_temperature_trajectory</code><span class="sig-paren">(</span><em>batch_time</em>, <em>time_step</em>, <em>initial_T</em>, <em>end_T</em>, <em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.generate_temperature_trajectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the temperature trajectory with specified order</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>batch_time</strong> (<em>float</em>) – batch time (min)</li>
+<li><strong>time_step</strong> (<em>float</em>) – time step (min)</li>
+<li><strong>initial_T</strong> (<em>float</em>) – initial temperature (C)</li>
+<li><strong>end_T</strong> (<em>float</em>) – end temperature (C</li>
+<li><strong>order</strong> (<em>float</em>) – order of cooling trajectory (-)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">time and temperature</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utility.list_operation">
+<code class="descclassname">utility.</code><code class="descname">list_operation</code><span class="sig-paren">(</span><em>input_list</em>, <em>operation</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.list_operation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift or Scale the CSD by a specified value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input_list</strong> (<em>list</em>) – input list</li>
+<li><strong>operation</strong> (<em>char</em>) – <ul>
+<li>for shift, * for scale</li>
+</ul>
+</li>
+<li><strong>value</strong> (<em>float</em>) – shift or scale constant</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">processed list</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utility.moment_calculation">
+<code class="descclassname">utility.</code><code class="descname">moment_calculation</code><span class="sig-paren">(</span><em>size</em>, <em>density_function</em>, <em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.moment_calculation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the desired order moment of the specified CSD</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>size</strong> (<em>list</em>) – crystal size (um)</li>
+<li><strong>density_function</strong> (<em>list</em>) – density function (1/um^4)</li>
+<li><strong>order</strong> (<em>float</em>) – moment order</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">moment</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utility.transform">
+<code class="descclassname">utility.</code><code class="descname">transform</code><span class="sig-paren">(</span><em>x_list</em>, <em>y_list</em>, <em>x_coordinate</em><span class="sig-paren">)</span><a class="headerlink" href="#utility.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the discretized CSD to continuous CSD, which makes it easier to integrate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x_list</strong> (<em>list</em>) – crystal size (um)</li>
+<li><strong>y_list</strong> (<em>list</em>) – density function (1/um^4)</li>
+<li><strong>x_coordinate</strong> (<em>float</em>) – x coordinate (um)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">y coordinate (1/um^4)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="figure.html" class="btn btn-neutral float-left" title="figure.py module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="crystal.html" class="btn btn-neutral float-right" title="crystal.py module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ming-Chun Fang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

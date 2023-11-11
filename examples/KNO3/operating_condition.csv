@@ -1,0 +1,9 @@
+seed usage,,,,
+seed_loading,r0,w,mesh_size,
+g/L,um,-,um,
+0.001,100,0.1,1,
+,,,,
+temperature trajectory,,,,
+batch_time,initial_T,end_T,order,time_step
+min,C,C,-,min
+80,32,28,3,1

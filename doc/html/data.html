@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>data.py module &mdash; Batch_Crystallizer_Simulator 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="figure.py module" href="figure.html" />
+    <link rel="prev" title="Module Dictionary" href="Module%20Dictionary.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Batch_Crystallizer_Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#important-script">Important Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#file-structure-of-the-example-kno3">File Structure of the example/KNO3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#simulation-of-crystallization">Simulation of Crystallization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Module%20Dictionary.html">Module Dictionary</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">data.py module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data.csv_input"><code class="docutils literal notranslate"><span class="pre">csv_input()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data.csv_output"><code class="docutils literal notranslate"><span class="pre">csv_output()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data.get_variable"><code class="docutils literal notranslate"><span class="pre">get_variable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data.parameter_read"><code class="docutils literal notranslate"><span class="pre">parameter_read()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data.string_float_transform"><code class="docutils literal notranslate"><span class="pre">string_float_transform()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data.variable"><code class="docutils literal notranslate"><span class="pre">variable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data.variable_output"><code class="docutils literal notranslate"><span class="pre">variable_output()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data.variable_read"><code class="docutils literal notranslate"><span class="pre">variable_read()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data.variable_time"><code class="docutils literal notranslate"><span class="pre">variable_time</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#data.variable_time.set_time"><code class="docutils literal notranslate"><span class="pre">variable_time.set_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data.variable_time.summary"><code class="docutils literal notranslate"><span class="pre">variable_time.summary()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data.variable_time_read"><code class="docutils literal notranslate"><span class="pre">variable_time_read()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="figure.html">figure.py module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html">utility.py module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html">crystal.py module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Batch_Crystallizer_Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Module%20Dictionary.html">Module Dictionary</a></li>
+      <li class="breadcrumb-item active">data.py module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/data.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-data">
+<span id="data-py-module"></span><h1>data.py module<a class="headerlink" href="#module-data" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="data.csv_input">
+<span class="sig-prename descclassname"><span class="pre">data.</span></span><span class="sig-name descname"><span class="pre">csv_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.csv_input" title="Permalink to this definition"></a></dt>
+<dd><p>Read the csv file as a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>string</em>) – csv file name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>content of csv file</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.csv_output">
+<span class="sig-prename descclassname"><span class="pre">data.</span></span><span class="sig-name descname"><span class="pre">csv_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.csv_output" title="Permalink to this definition"></a></dt>
+<dd><p>Export the list as a csv_file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<em>list</em>) – the list to be exported</p></li>
+<li><p><strong>file</strong> (<em>string</em>) – the csv file name</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.get_variable">
+<span class="sig-prename descclassname"><span class="pre">data.</span></span><span class="sig-name descname"><span class="pre">get_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.get_variable" title="Permalink to this definition"></a></dt>
+<dd><p>Return the variable that fits the desired variable name from a variable list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variable_list</strong> (<em>list</em>) – variable list</p></li>
+<li><p><strong>variable_name</strong> (<em>string</em>) – desired variable</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>desired variable</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#data.variable" title="data.variable">variable</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.parameter_read">
+<span class="sig-prename descclassname"><span class="pre">data.</span></span><span class="sig-name descname"><span class="pre">parameter_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.parameter_read" title="Permalink to this definition"></a></dt>
+<dd><p>Read the csv file that contains multiple parameters and transform it into list of variables</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>string</em>) – csv file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of parameters</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.string_float_transform">
+<span class="sig-prename descclassname"><span class="pre">data.</span></span><span class="sig-name descname"><span class="pre">string_float_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.string_float_transform" title="Permalink to this definition"></a></dt>
+<dd><p>Transform the string to float number. If the string can not transform to number, output 0 and set bad_data_checker to 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>string</em>) – the string to be transformed</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The float and bad_data_checker</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float and int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="data.variable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">data.</span></span><span class="sig-name descname"><span class="pre">variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.variable" title="Permalink to this definition"></a></dt>
+<dd><p>A class built for the variables that contain name and physical unit. It’s defined through init function.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.variable_output">
+<span class="sig-prename descclassname"><span class="pre">data.</span></span><span class="sig-name descname"><span class="pre">variable_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.variable_output" title="Permalink to this definition"></a></dt>
+<dd><p>Export the variables to csv file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variable_list</strong> (<em>list</em>) – variables to be exported</p></li>
+<li><p><strong>file</strong> (<em>string</em>) – csv file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.variable_read">
+<span class="sig-prename descclassname"><span class="pre">data.</span></span><span class="sig-name descname"><span class="pre">variable_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.variable_read" title="Permalink to this definition"></a></dt>
+<dd><p>Read the csv file and transform it into list of variables. Print the warning message if the transformation is not successful</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>string</em>) – csv file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="data.variable_time">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">data.</span></span><span class="sig-name descname"><span class="pre">variable_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.variable_time" title="Permalink to this definition"></a></dt>
+<dd><p>A class for variables that is time-dependent. It’s defined through init function.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="data.variable_time.set_time">
+<span class="sig-name descname"><span class="pre">set_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_hour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_hour</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.variable_time.set_time" title="Permalink to this definition"></a></dt>
+<dd><p>Set the time interval for the variable_time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time1</strong> (<em>string</em>) – start date in the format of %Y/%m/%d</p></li>
+<li><p><strong>start_hour</strong> (<em>int</em>) – start hour for the start date</p></li>
+<li><p><strong>time2</strong> (<em>string</em>) – end date in the format of %Y/%m/%d</p></li>
+<li><p><strong>end_hour</strong> (<em>int</em>) – end hour for the start date</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data.variable_time.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data.variable_time.summary" title="Permalink to this definition"></a></dt>
+<dd><p>Export the mean, standard deviation and relative standard deviation of the variable_time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>mean, std and rstd</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="data.variable_time_read">
+<span class="sig-prename descclassname"><span class="pre">data.</span></span><span class="sig-name descname"><span class="pre">variable_time_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_form</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data.variable_time_read" title="Permalink to this definition"></a></dt>
+<dd><p>Read the csv file and transform it into variable_time. Print the warning message if the transformation is not successful</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>string</em>) – csv file</p>
+</dd>
+<dt class="field-even">Date_form<span class="colon">:</span></dt>
+<dd class="field-even"><p>the date format of the csv data</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Module%20Dictionary.html" class="btn btn-neutral float-left" title="Module Dictionary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="figure.html" class="btn btn-neutral float-right" title="figure.py module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ming-Chun Fang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
