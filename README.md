@@ -1,5 +1,5 @@
 # Introduction
-Batch_Crystallizer_Simulator is a program that simulates the batch cooling crystallizer with size independent nucleation rate and growth rate kinetic. 
+Crystallizer_Simulator_Batch is a program that simulates the batch cooling crystallizer with size independent nucleation rate and growth rate kinetic. 
 
 # File Structure
 There're three important directories in the project.
