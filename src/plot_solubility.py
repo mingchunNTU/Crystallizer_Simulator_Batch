@@ -1,3 +1,7 @@
+import os
+import sys
+sys.path.insert(0, os.path.abspath('./module'))
+
 from data import *
 from figure import *
 import numpy as np 

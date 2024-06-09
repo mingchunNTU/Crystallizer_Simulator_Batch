@@ -11,4 +11,4 @@ There're three important directories in the project.
 To download the project, please enter `git clone https://github.com/mingchunNTU/Batch_Crystallizer_Simulator.git` in the terminal. 
 
 # User Manual
-It's suggested to read the user manual doc/html/index.html. The installation guide and program tutorial is provided. 
+It's suggested to read the user manual doc/sphinx/_build/html/index.html. The installation guide and program tutorial is provided. 
