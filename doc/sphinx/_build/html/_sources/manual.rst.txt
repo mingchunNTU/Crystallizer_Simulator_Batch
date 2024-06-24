@@ -50,7 +50,7 @@ The seed CSD is assumed to be parabolic form.
 
 .. math:: 
 
-	f(r)=A*r_0(1+w)(1-w)
+	f(r)=A*(r-r_0(1+w))(r-r_0(1-w))
 
 for :math:`r_0(1+w)>r>r_0(1-w)`
 
